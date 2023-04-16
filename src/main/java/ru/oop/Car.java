@@ -1,5 +1,12 @@
 package ru.oop;
 
 public class Car {
-    public
+
+
+    public Car(Position position){
+
+    }
+
+    public void getToPosition(){}
+
 }
