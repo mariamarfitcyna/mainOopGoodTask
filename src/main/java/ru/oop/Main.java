@@ -1,5 +1,8 @@
 package ru.oop;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,7 +41,14 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        // TODO
+        Transport vehicle = new Bus(); //выбираем любой транспорт, на рандом строчек не хватило(
+        if (vehicle instanceof Bus || vehicle instanceof Subway){
+            person.walk(vehicle.getPosition());}
+
+        vehicle.getToPosition(destination);
+
+        if (!person.getPosition().equals(destination)){
+            person.walk(destination);}
         assert person.getPosition() == destination;
     }
 }
