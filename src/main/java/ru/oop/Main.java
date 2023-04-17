@@ -1,6 +1,7 @@
 package ru.oop;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -41,14 +42,18 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Transport vehicle = new Bus(); //выбираем любой транспорт, на рандом строчек не хватило(
-        if (vehicle instanceof Bus || vehicle instanceof Subway){
-            person.walk(vehicle.getPosition());}
-
-        vehicle.getToPosition(destination);
-
+        Random random = new Random();
+        List<Transport> vehicles = Arrays.asList(new Car(person), new Bus(person), new Bike(person), new Subway(person));
+        while (!person.getPosition().equals(destination)){
+            Transport vehicle = vehicles.get(random.nextInt(vehicles.size())); //выбираем ближайший
+            if (!vehicle.getPosition().equals(person.getPosition())){
+                person.walk(vehicle.getPosition());//идем до очередного вида транспорта
+            }
+            vehicle.getToPosition(destination);//пытаемся добраться до цели
+        }
         if (!person.getPosition().equals(destination)){
-            person.walk(destination);}
+            person.walk(destination);
+        }
         assert person.getPosition() == destination;
     }
 }
