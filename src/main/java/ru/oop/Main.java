@@ -42,10 +42,9 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Random random = new Random();
         List<Transport> vehicles = Arrays.asList(new Car(person), new Bus(person), new Bike(person), new Subway(person));
         while (!person.getPosition().equals(destination)){
-            Transport vehicle = vehicles.get(random.nextInt(vehicles.size())); //выбираем ближайший
+            Transport vehicle = vehicles.get(0); //выбираем ближайший
             if (!vehicle.getPosition().equals(person.getPosition())){
                 person.walk(vehicle.getPosition());//идем до очередного вида транспорта
             }
