@@ -21,8 +21,8 @@ public class Main {
      * Переехать из текущего места в заданную точку
      */
     public static void moveTo(Person person, Position destination) {
-        Car car = new Car(person.getPosition());
-        car.getToPosition();
+        Car car = new Car(person); //создаем машину
+        car.getToPosition(destination);
         if (person.getPosition() != destination){
             person.walk(destination);
         }

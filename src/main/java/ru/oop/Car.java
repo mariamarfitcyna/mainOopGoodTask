@@ -3,10 +3,16 @@ package ru.oop;
 public class Car {
 
 
-    public Car(Position position){
+    public Car(Person person){
 
     }
 
-    public void getToPosition(){}
+    /**
+     * Добраться до destination
+     * Пусть внутри еще меняет местоположение человека (person)
+     * Необязательно может доехать непосредственно до destination
+     * @param destination место назначения
+     */
+    public void getToPosition(Position destination){}
 
 }
