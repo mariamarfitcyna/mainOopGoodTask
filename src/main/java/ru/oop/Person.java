@@ -1,5 +1,8 @@
 package ru.oop;
 
+import ru.oop.location.Position;
+import ru.oop.location.Positioned;
+
 /**
  * Человек
  *
