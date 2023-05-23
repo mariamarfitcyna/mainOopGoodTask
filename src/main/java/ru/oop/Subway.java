@@ -1,7 +1,19 @@
 package ru.oop;
 
-public class Subway extends Transport{
-    public Subway(Person person) {
-        super(person);
+public class Subway implements Transport{
+
+    @Override
+    public Position getPosition() {
+        return null;
+    }
+
+    @Override
+    public void setPosition(Position position) {
+
+    }
+
+    @Override
+    public void go(Position destination) {
+
     }
 }

@@ -1,7 +1,19 @@
 package ru.oop;
 
-public class Car extends Transport{
-    public Car(Person person) {
-        super(person);
+public class Car implements Transport{
+
+    @Override
+    public Position getPosition() {
+        return null;
+    }
+
+    @Override
+    public void setPosition(Position position) {
+
+    }
+
+    @Override
+    public void go(Position destination) {
+
     }
 }

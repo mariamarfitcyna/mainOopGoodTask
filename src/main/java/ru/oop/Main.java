@@ -41,14 +41,7 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Transport vehicle = new Bus(person);//допустим, выбрали автобус
-        if (!vehicle.getPosition().equals(person.getPosition())){ //если человек не около транспорта
-            person.walk(vehicle.getPosition());}//то идем к нему пешком
 
-        vehicle.getToPosition(destination);//едем в место destination
-
-        if (!person.getPosition().equals(destination)){
-            person.walk(destination);}
         assert person.getPosition() == destination;
     }
 }
