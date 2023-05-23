@@ -1,16 +1,13 @@
 package ru.oop;
 
-public class Car {
-
-
-    public Car(Person person){}
+public interface Car {
 
     /**
-     * Добраться до destination
+     * Подвезти максимально близко до destination
      * Пусть внутри еще меняет местоположение человека (person)
-     * Необязательно может доехать непосредственно до destination
      * @param destination место назначения
+     * @param person человек которого подвозим
      */
-    public void go(Position destination){}
+    Position movePersonTo(Position destination, Person person);
 
 }
