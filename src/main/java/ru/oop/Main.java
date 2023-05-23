@@ -1,7 +1,8 @@
 package ru.oop;
 
-import java.util.Arrays;
-import java.util.Random;
+import ru.oop.location.Position;
+import ru.oop.location.Positioned;
+import ru.oop.transports.Transport;
 
 /**
  * <b>Задача 2:</b><br>
@@ -40,10 +41,9 @@ public class Main {
      * Переехать из текущего места в заданную точку
      * на любом, заранее определённом транспорте
      */
-    public static void moveTo(Person person, Position destination) {
-        Transport transport = new Bus();
+    public static void moveTo(Person person, Position destination, Transport transport) {
         person.walk(transport.getPosition());
-        transport.go(destination);
+        transport.movePersonTo(destination, person);
         person.walk(destination);
         assert person.getPosition() == destination;
     }

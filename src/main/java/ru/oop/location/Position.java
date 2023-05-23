@@ -1,4 +1,4 @@
-package ru.oop;
+package ru.oop.location;
 
 /**
  * Позиция
