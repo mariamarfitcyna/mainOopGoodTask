@@ -41,7 +41,10 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-
+        Transport transport = new Bus();
+        person.walk(transport.getPosition());
+        transport.go(destination);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
