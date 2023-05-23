@@ -1,8 +1,6 @@
 package ru.oop;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 /**
  * <b>Задача 2:</b><br>
@@ -41,18 +39,15 @@ public class Main {
      * Переехать из текущего места в заданную точку
      * на любом, заранее определённом транспорте
      */
-    public static void moveTo(Person person, Position destination) {
-        List<Transport> vehicles = Arrays.asList(new Car(person), new Bus(person), new Bike(person), new Subway(person));
-        while (!person.getPosition().equals(destination)){
-            Transport vehicle = vehicles.get(0); //выбираем ближайший
-            if (!vehicle.getPosition().equals(person.getPosition())){
-                person.walk(vehicle.getPosition());//идем до очередного вида транспорта
+    public static void moveTo(Person person, Position destination, List<Transport> transportList) {
+        for (Transport transport : transportList){
+            if (person.getPosition() == destination){
+                break;
             }
-            vehicle.getToPosition(destination);//пытаемся добраться до цели
+            person.walk(transport.getPosition());
+            transport.go(destination);
         }
-        if (!person.getPosition().equals(destination)){
-            person.walk(destination);
-        }
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
