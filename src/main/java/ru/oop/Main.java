@@ -1,5 +1,7 @@
 package ru.oop;
 
+import ru.oop.transports.Transport;
+
 import java.util.List;
 
 /**
@@ -45,7 +47,7 @@ public class Main {
                 break;
             }
             person.walk(transport.getPosition());
-            transport.go(destination);
+            transport.go(destination, person);
         }
         person.walk(destination);
         assert person.getPosition() == destination;
