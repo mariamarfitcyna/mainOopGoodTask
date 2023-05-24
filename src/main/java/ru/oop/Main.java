@@ -20,8 +20,9 @@ public class Main {
     /**
      * Переехать из текущего места в заданную точку
      */
-    public static void moveTo(Person person, Position destination) {
-        // TODO
+    public static void moveTo(Person person, Position destination, Car car) {
+        car.movePersonTo(destination, person);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
